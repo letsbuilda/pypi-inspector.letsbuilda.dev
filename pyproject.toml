@@ -23,7 +23,7 @@ documentation = "https://docs.letsbuilda.dev/pypi-inspector.letsbuilda.dev/"
 dev = [
     "black",
     "isort",
-    "pylint",
+    "ruff",
     "pre-commit",
 ]
 tests = [
