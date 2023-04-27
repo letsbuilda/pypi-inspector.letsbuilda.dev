@@ -5,6 +5,7 @@ from os import getenv
 import sentry_sdk
 from flask import Flask
 from sentry_sdk.integrations.flask import FlaskIntegration
+
 from .pypi import pypi_bp
 
 
@@ -31,6 +32,7 @@ def create_app() -> Flask:
     app.register_blueprint(pypi_bp)
 
     if not app.debug and not app.testing:
+
         class CustomProxyFix:
             """CustomProxyFix"""
 
