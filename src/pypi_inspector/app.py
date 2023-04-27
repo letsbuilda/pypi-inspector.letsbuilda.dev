@@ -19,9 +19,7 @@ def create_app() -> Flask:
         integrations=[FlaskIntegration()],
         send_default_pii=True,
         traces_sample_rate=0.25,
-        _experiments={
-            "profiles_sample_rate": 0.25,
-        },
+        profiles_sample_rate=0.25,
         release=f"{release_prefix}@{git_sha}",
     )
 
