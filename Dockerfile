@@ -3,7 +3,7 @@ FROM --platform=linux/amd64 python:3.11-slim@sha256:5a67c38a7c28ad09d08f4e153280
 RUN adduser --disabled-password pypi_inspector
 USER pypi-inspector
 
-ENV PATH="${PATH}:/home/pypi-inspector/.local/bin"
+ENV PATH="${PATH}:/home/pypi_inspector/.local/bin"
 
 # Set Git SHA environment variable
 ARG git_sha="development"
