@@ -1,0 +1,57 @@
+[project]
+name = "pypi-inspector.letsbuilda.dev"
+version = "0.1.0"
+description = "Alternate file browser for PyPI distributions"
+authors = [
+    { name = "Bradley Reynolds", email = "bradley.reynolds@darbia.dev" },
+]
+license = { text = "MIT" }
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "gunicorn==20.1.0",
+    "Flask[async]==2.3.1",
+    "sentry-sdk[fastapi]==1.19.1",
+    "letsbuilda-pypi==4.0.0",
+]
+
+[project.urls]
+repository = "https://github.com/letsbuilda/pypi-inspector.letsbuilda.dev/"
+documentation = "https://docs.letsbuilda.dev/pypi-inspector.letsbuilda.dev/"
+
+[project.optional-dependencies]
+dev = [
+    "black",
+    "isort",
+    "pylint",
+    "pre-commit",
+]
+tests = [
+    "pytest",
+]
+docs = [
+    "sphinx",
+    "furo",
+    "sphinx-autoapi",
+    "releases",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
+
+[tool.isort]
+profile = "black"
+
+[tool.black]
+target-version = ["py310"]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+
+[tool.pytest.ini_options]
+addopts = "tests -r a -v --doctest-modules src"

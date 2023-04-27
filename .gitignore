@@ -1,2 +1,6 @@
 # JetBrains IDEs
 .idea
+
+# Generated content
+__pycache__
+*.egg-info
