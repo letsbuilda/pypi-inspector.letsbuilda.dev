@@ -1,1 +1,1 @@
-"""Alternate file browser for PyPI distributions"""
+"""Alternate file browser for PyPI distributions.py"""

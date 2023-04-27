@@ -1,12 +1,13 @@
 """Build an app instance"""
 
+import urllib.parse
 from os import getenv
 
 import sentry_sdk
 from flask import Flask
 from sentry_sdk.integrations.flask import FlaskIntegration
 
-from .pypi import pypi_bp
+from .routes import pypi_bp
 
 
 def create_app() -> Flask:
@@ -29,8 +30,14 @@ def create_app() -> Flask:
 
     app.register_blueprint(pypi_bp)
 
-    if not app.debug and not app.testing:
+    @app.context_processor
+    def inject_data():
+        """Inject data into Jinja environment"""
+        return dict(git_sha=git_sha)
 
+    app.jinja_env.filters["unquote"] = lambda u: urllib.parse.unquote(u)
+
+    if not app.debug and not app.testing:
         class CustomProxyFix:
             """CustomProxyFix"""
 

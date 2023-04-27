@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="/static/prism.css">
+{% endblock %}
+
+{% block body %}
+<a href="{{ mailto_report_link }}" style="color:red"> <strong>Report Malicious Package</strong> </a>
+<pre id="line" class="line-numbers linkable-line-numbers language-python">
+<code class="language-python">{{- code }}</code>
+</pre>
+<script src="/static/prism.js"></script>
+{% endblock %}

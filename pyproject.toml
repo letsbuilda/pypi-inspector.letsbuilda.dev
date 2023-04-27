@@ -12,7 +12,8 @@ dependencies = [
     "gunicorn==20.1.0",
     "Flask[async]==2.3.1",
     "sentry-sdk[fastapi]==1.21.0",
-    "letsbuilda-pypi==4.0.0",
+    "packaging==23.1",
+    "letsbuilda-pypi @ git+https://github.com/letsbuilda/letsbuilda-pypi.git@dev",
 ]
 
 [project.urls]
