@@ -1,4 +1,4 @@
-FROM --platform=linux/amd64 python:3.11-slim@sha256:286f2f1d6f2f730a44108656afb04b131504b610a6cb2f3413918e98dabba67e
+FROM --platform=linux/amd64 python:3.11-slim@sha256:551c9529e77896518ac5693d7e98ee5e12051d625de450ac2a68da1eae15ec87
 
 RUN adduser --disabled-password pypi_inspector
 USER pypi_inspector
