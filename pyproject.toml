@@ -9,7 +9,7 @@ license = { text = "MIT" }
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "gunicorn==20.1.0",
+    "gunicorn==21.1.0",
     "Flask[async]==2.3.1",
     "sentry-sdk[fastapi]==1.21.0",
     "requests==2.29.0",
