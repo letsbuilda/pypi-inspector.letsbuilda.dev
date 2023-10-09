@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "gunicorn==20.1.0",
-    "Flask[async]==2.3.1",
+    "Flask[async]==3.0.0",
     "sentry-sdk[fastapi]==1.21.0",
     "requests==2.29.0",
     "packaging==23.1",
